@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/mobile/node_modules
 
 # next.js
 /.next/
@@ -9,6 +10,8 @@
 
 # production
 /build
+/mobile/.expo/
+/mobile/dist/
 
 # debug
 npm-debug.log*
@@ -25,3 +28,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# runtime & generated artifacts (not source code)
+/scratch/
+/.jobs/
+/.curriculum/
+/public/generated-videos/
+/public/curriculum-uploads/
+/mobile/.expo-build-check/

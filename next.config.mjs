@@ -6,6 +6,17 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    serverComponentsExternalPackages: [
+      'msedge-tts',
+      'ws',
+      'isomorphic-ws',
+      'fluent-ffmpeg',
+      'ffmpeg-static',
+      'sharp',
+      'pdf-parse',
+    ],
+  },
 }
 
 export default nextConfig

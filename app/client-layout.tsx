@@ -3,6 +3,9 @@
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import React from "react"
+import { AuthProvider } from "@/lib/context/auth-context"
+import { StudyProvider } from "@/lib/context/study-context"
+import { Toaster } from "@/components/ui/sonner"
 
 // <CHANGE> Added error boundary component to catch React errors
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
@@ -62,9 +65,12 @@ export default function ClientLayout({
   return (
     <ErrorBoundary>
       <GlobalErrorHandler>
-        {/* <CHANGE> Added proper loading fallback instead of null */}
-        <Suspense fallback={<div className="min-h-screen bg-black" />}>{children}</Suspense>
-        {/* <CHANGE> Wrapped Analytics in error boundary */}
+        <AuthProvider>
+          <StudyProvider>
+            <Suspense fallback={<div className="min-h-screen bg-black" />}>{children}</Suspense>
+            <Toaster richColors position="top-right" theme="dark" />
+          </StudyProvider>
+        </AuthProvider>
         <ErrorBoundary>
           <Analytics />
         </ErrorBoundary>

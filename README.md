@@ -1,33 +1,80 @@
-# Learnverse
+# LearnVerse 🧠✨
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [v0](https://v0.app).
+**LearnVerse** is an AI-powered adaptive microlearning platform for school and college students. It turns heavy study materials (PDFs, scanned handwritten notes, textbooks, and URLs) into bite-sized, high-retention microlearning modules:
 
-## Built with v0
+- 📑 **High-Yield Summary Notes & Glossary**
+- 🎴 **3D Active Recall Flashcards**
+- ❓ **Verification Quizzes with Instant Rationale**
+- 🎬 **45-Second Narrated Video Reels**
+- 🎯 **Adaptive Knowledge-Gap Diagnostics & Revision Sequencing**
 
-This repository is linked to a [v0](https://v0.app) project. You can continue developing by visiting the link below -- start new chats to make changes, and v0 will push commits directly to this repo. Every merge to `main` will automatically deploy.
+---
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_e0fkRX2t6bi8BVwaveKmmKkM81kw)
+## 🏗️ Repository Architecture
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+Learnverse/                         ← Root Repository
+│
+├── app/                            ← Next.js 14 Web Application (App Router)
+│   ├── page.tsx                    ← 3D Interactive Hero Landing Page
+│   ├── dashboard/                  ← Student Command Center & Decks
+│   └── study/[id]/                 ← 5-Modalities Interactive Study Hub
+├── components/                     ← Web UI Components (50+ shadcn/ui & custom)
+├── hooks/                          ← Web Hooks
+├── lib/                            ← State, Context, Mock Engine, & Types
+├── public/                         ← Web Static Assets & 3D Spline Canvas
+├── package.json                    ← Web Dependencies (Next.js, Tailwind v4, Radix)
+├── next.config.mjs
+│
+├── mobile/                         ← React Native / Expo Mobile App
+│   ├── app/                        ← Expo Router Navigation
+│   │   ├── _layout.tsx             ← Root Layout with StudyProvider
+│   │   ├── (tabs)/                 ← Bottom Tab Navigation (Dashboard, Explore, Profile)
+│   │   └── study/[id].tsx          ← Mobile Microlearning Study Hub
+│   ├── src/
+│   │   ├── components/             ← Mobile UI (Cards, Deck, Quiz, Reel, Radar)
+│   │   ├── screens/                ← Standalone Screens
+│   │   ├── context/                ← Mobile StudyContext
+│   │   ├── constants/              ← Theme & Mock Datasets
+│   │   └── types/                  ← Shared Types
+│   ├── app.json                    ← Expo Configuration
+│   └── package.json                ← React Native Dependencies
+│
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Quickstart
 
-## Learn More
+### 1. Web Application (Next.js)
+```bash
+# Install dependencies
+pnpm install
 
-To learn more, take a look at the following resources:
+# Run dev server
+pnpm dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [v0 Documentation](https://v0.app/docs) - learn about v0 and how to use it.
+---
+
+### 2. Mobile Application (React Native / Expo)
+```bash
+# Navigate to mobile app
+cd mobile
+
+# Install mobile dependencies
+pnpm install
+
+# Start Expo dev server
+npx expo start
+```
+Scan the QR code in **Expo Go** or press `a` for Android / `i` for iOS simulator.
+
+---
+
+## 🎨 Design System
+- **Theme**: Pure Dark (`#000000`) with Neon Green Primary (`#1DED83`).
+- **Typography**: Montserrat headlines with Monospace precision accents (`IBM Plex Mono`).
+- **Aesthetics**: Glassmorphism, 3D interactive physics, and subtle glowing borders.

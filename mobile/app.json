@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "LearnVerse",
+    "slug": "learnverse-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "learnverse",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.learnverse.app"
+    },
+    "android": {
+      "package": "com.learnverse.app"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-asset"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

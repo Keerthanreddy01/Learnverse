@@ -1,0 +1,323 @@
+import { StudyMaterial } from '../types'
+
+export const INITIAL_STUDY_MATERIALS: StudyMaterial[] = [
+  {
+    id: 'bio-101',
+    title: 'Cellular Respiration & ATP Synthesis',
+    subject: 'Biology / Biochemistry',
+    subjectColor: '#10B981',
+    type: 'pdf',
+    sourceFileName: 'Cellular_Bio_Chapter_7_Metabolism.pdf',
+    uploadDate: 'Today at 10:45 AM',
+    estimatedStudyTimeMinutes: 12,
+    progressPercentage: 68,
+    overview: 'Complete biological and biochemical guide to cellular respiration, glycolysis energetics, Krebs cycle electron harvesting, and mitochondrial ATP synthase mechanisms.',
+    subtopics: [
+      {
+        id: 'sub-bio-1',
+        title: 'Glycolysis: Cytosolic Glucose Splitting',
+        description: 'Anaerobic 10-step enzymatic pathway converting glucose into 2 pyruvate molecules with net 2 ATP and 2 NADH yield.',
+        learningObjectives: [
+          'Identify net ATP and NADH yields from cytosolic glycolysis',
+          'Understand anaerobic conversion of glucose to pyruvate',
+        ],
+        estimatedDurationSeconds: 8,
+        reelStatus: 'ready',
+      },
+      {
+        id: 'sub-bio-2',
+        title: 'Citric Acid (Krebs) Cycle',
+        description: 'Aerobic cyclic enzymatic series in the mitochondrial matrix that extracts high-energy electrons into NADH and FADH2.',
+        learningObjectives: [
+          'Locate Krebs cycle reactions in the mitochondrial matrix',
+          'Track electron transfer into NADH and FADH2 coenzymes',
+        ],
+        estimatedDurationSeconds: 8,
+        reelStatus: 'ready',
+      },
+      {
+        id: 'sub-bio-3',
+        title: 'Chemiosmosis & ATP Synthase Turbine',
+        description: 'Proton motive force across the inner mitochondrial membrane powers rotary ATP synthase to produce bulk cellular energy.',
+        learningObjectives: [
+          'Explain proton motive force across the inner membrane',
+          'Analyze ATP synthase mechanical rotary catalysis',
+        ],
+        estimatedDurationSeconds: 8,
+        reelStatus: 'ready',
+      },
+    ],
+    summaryNotes: {
+      title: 'Cellular Respiration Breakdown',
+      readingTimeMinutes: 4,
+      keyTakeaways: [
+        'Cellular respiration converts biochemical energy from nutrients into ATP through 4 stages.',
+        'Glycolysis is anaerobic and occurs in the cytoplasm, producing a net 2 ATP and 2 NADH.',
+        'The Citric Acid (Krebs) Cycle occurs inside the mitochondrial matrix, generating high-energy electron carriers.',
+        'Oxidative Phosphorylation generates bulk ATP (~28-32 ATP) via ATP synthase driven by a proton gradient.',
+      ],
+      keyTerms: [
+        {
+          term: 'ATP (Adenosine Triphosphate)',
+          definition: 'The primary energy currency of the cell, storing energy in high-energy phosphate bonds.',
+          importance: 'high',
+        },
+        {
+          term: 'Chemiosmosis',
+          definition: 'Movement of protons across a semipermeable membrane down electrochemical gradient to power ATP synthase.',
+          importance: 'high',
+        },
+        {
+          term: 'NADH / FADH2',
+          definition: 'Reduced coenzymes that act as electron shuttles carrying high-energy electrons to the ETC.',
+          importance: 'medium',
+        },
+      ],
+      sections: [
+        {
+          heading: '1. Glycolysis: The Starting Engine',
+          summary: '10-step metabolic pathway converting 1 glucose into 2 pyruvate molecules.',
+          bulletPoints: [
+            'Consumes 2 ATP, produces 4 ATP and 2 NADH (Net: 2 ATP + 2 NADH).',
+            'Occurs entirely in the cytosol without requiring oxygen.',
+          ],
+          keyTakeaway: 'Universal energy pathway across almost all living organisms.',
+        },
+        {
+          heading: '2. Citric Acid (Krebs) Cycle',
+          summary: 'Cyclic reaction harvesting high-energy electrons inside the mitochondrial matrix.',
+          bulletPoints: [
+            'Per glucose: produces 6 NADH, 2 FADH2, 2 ATP, and 4 CO2.',
+            'Requires aerobic conditions to replenish coenzymes.',
+          ],
+        },
+      ],
+    },
+    flashcards: [
+      {
+        id: 'fc-1',
+        topic: 'Glycolysis',
+        question: 'What is the net gain of ATP per glucose molecule in glycolysis alone?',
+        answer: 'Net 2 ATP (4 produced minus 2 invested).',
+        hint: 'Consider the investment vs payoff phase.',
+        confidence: 'mastered',
+      },
+      {
+        id: 'fc-2',
+        topic: 'Mitochondria',
+        question: 'Where specifically does the Citric Acid (Krebs) cycle occur?',
+        answer: 'Inside the Mitochondrial Matrix.',
+        hint: 'Innermost mitochondrial compartment.',
+        confidence: 'medium',
+      },
+      {
+        id: 'fc-3',
+        topic: 'Electron Transport',
+        question: 'What is the terminal electron acceptor in aerobic cellular respiration?',
+        answer: 'Molecular Oxygen (O2), forming H2O.',
+        hint: 'The gas we breathe in.',
+        confidence: 'hard',
+      },
+    ],
+    quiz: {
+      id: 'quiz-bio-101',
+      title: 'Cellular Respiration Mastery Assessment',
+      totalQuestions: 3,
+      passingScore: 66,
+      questions: [
+        {
+          id: 'q-1',
+          topic: 'Glycolysis',
+          question: 'Which process takes place in the cytoplasm and requires NO oxygen?',
+          options: ['Glycolysis', 'Krebs Cycle', 'Electron Transport Chain', 'Pyruvate Oxidation'],
+          correctIndex: 0,
+          explanation: 'Glycolysis is strictly cytosolic and operates anaerobically.',
+        },
+        {
+          id: 'q-2',
+          topic: 'ATP Synthase',
+          question: 'What immediate force drives ATP Synthase rotation during chemiosmosis?',
+          options: ['Direct GTP cleavage', 'Proton Motive Force (Gradient)', 'Thermal diffusion', 'Sodium pump'],
+          correctIndex: 1,
+          explanation: 'Protons flowing down their electrochemical gradient rotate ATP Synthase.',
+        },
+        {
+          id: 'q-3',
+          topic: 'ATP Yields',
+          question: 'Approximately how many ATP are generated per glucose under complete aerobic respiration?',
+          options: ['2 ATP', '4 ATP', '30 to 32 ATP', '100 ATP'],
+          correctIndex: 2,
+          explanation: 'Standard biological yield is estimated at 30-32 ATP.',
+        },
+      ],
+    },
+    reel: {
+      id: 'reel-bio-101',
+      title: 'How ATP Powers You in 45 Seconds',
+      durationSeconds: 45,
+      visualStyle: '3d-infographic',
+      narrationScript: 'Every second, your cells charge billions of ATP molecules. Glucose splits in glycolysis, Krebs extracts high-energy electrons, and ATP synthase spins like a turbine.',
+      audioWaveform: [0.2, 0.5, 0.8, 0.95, 0.7, 0.6, 0.9, 0.75, 0.4, 0.7, 0.9, 0.6, 0.3],
+      chapters: [
+        { id: 'c-1', title: '01. Glycolysis', timestampSeconds: 0, subtitle: 'Glucose splits into pyruvate.' },
+        { id: 'c-2', title: '02. Krebs Engine', timestampSeconds: 15, subtitle: 'Extracting electrons into NADH.' },
+        { id: 'c-3', title: '03. ATP Turbine', timestampSeconds: 30, subtitle: 'Protons spin ATP synthase.' },
+      ],
+    },
+    knowledgeGap: {
+      overallMastery: 68,
+      weakestArea: 'Electron Transport Chain Inhibitors',
+      strongestArea: 'Glycolysis Net Yields',
+      recommendedStudyOrder: ['Electron Transport Chain', 'Chemiosmotic Coupling', 'Krebs Cycle'],
+      topics: [
+        {
+          name: 'Glycolysis Phases',
+          masteryPercentage: 92,
+          status: 'mastered',
+          questionsAttempted: 12,
+          recommendedAction: 'Solid mastery! Keep fresh with flashcards.',
+        },
+        {
+          name: 'Electron Transport Chain',
+          masteryPercentage: 45,
+          status: 'critical-gap',
+          questionsAttempted: 6,
+          recommendedAction: 'Review complex I-IV inhibitors and oxygen reduction.',
+        },
+      ],
+    },
+  },
+  {
+    id: 'cs-201',
+    title: 'Data Structures & Binary Tree Traversals',
+    subject: 'Computer Science',
+    subjectColor: '#06B6D4',
+    type: 'link',
+    sourceUrl: 'https://ocw.mit.edu/courses/6-006-trees',
+    uploadDate: 'Yesterday at 4:15 PM',
+    estimatedStudyTimeMinutes: 15,
+    progressPercentage: 85,
+    overview: 'In-depth algorithmic exploration of tree data structures, recursive DFS traversals, FIFO-queue powered BFS, and BST properties.',
+    subtopics: [
+      {
+        id: 'sub-cs-1',
+        title: 'Recursive Depth-First Search (DFS)',
+        description: 'Exploring pre-order, in-order, and post-order traversal patterns and their specific structural applications.',
+        learningObjectives: [
+          'Differentiate NLR, LNR, and LRN traversal sequences',
+          'Utilize in-order traversal to retrieve sorted BST keys',
+        ],
+        estimatedDurationSeconds: 8,
+        reelStatus: 'ready',
+      },
+      {
+        id: 'sub-cs-2',
+        title: 'Breadth-First Search (BFS) & Queue Queuing',
+        description: 'Level-order node exploration leveraging FIFO queue structures for shortest-path discovery in unweighted graphs and trees.',
+        learningObjectives: [
+          'Implement FIFO queue-driven level order traversals',
+          'Analyze space complexity of wide tree frontiers',
+        ],
+        estimatedDurationSeconds: 8,
+        reelStatus: 'ready',
+      },
+    ],
+    summaryNotes: {
+      title: 'Tree Algorithms & Traversals',
+      readingTimeMinutes: 5,
+      keyTakeaways: [
+        'Depth-First Search (DFS) includes Pre-order, In-order, and Post-order patterns.',
+        'In-order traversal on a Binary Search Tree produces strictly sorted order.',
+        'Breadth-First Search (BFS) uses a FIFO Queue to visit level by level.',
+      ],
+      keyTerms: [
+        {
+          term: 'In-order Traversal',
+          definition: 'Recursive sequence: Visit Left Subtree -> Current Node -> Right Subtree.',
+          importance: 'high',
+        },
+        {
+          term: 'BFS Queue',
+          definition: 'FIFO queue used to track frontier nodes at horizontal depth levels.',
+          importance: 'high',
+        },
+      ],
+      sections: [
+        {
+          heading: '1. DFS Recursive Orders',
+          summary: 'Pre-order (NLR), In-order (LNR), Post-order (LRN).',
+          bulletPoints: ['In-order on BST guarantees sorted output.', 'Pre-order clones structures.'],
+        },
+      ],
+    },
+    flashcards: [
+      {
+        id: 'fc-cs-1',
+        topic: 'BST Traversal',
+        question: 'Which traversal algorithm reads BST nodes in sorted ascending order?',
+        answer: 'In-order Traversal (Left -> Root -> Right).',
+        hint: 'Processes smaller left values first.',
+        confidence: 'mastered',
+      },
+      {
+        id: 'fc-cs-2',
+        topic: 'BFS Structure',
+        question: 'What data structure powers Breadth-First Search level traversal?',
+        answer: 'A Queue (FIFO).',
+        hint: 'Contrast with the Stack in DFS.',
+        confidence: 'mastered',
+      },
+    ],
+    quiz: {
+      id: 'quiz-cs-201',
+      title: 'Tree Algorithms Verification Quiz',
+      totalQuestions: 2,
+      passingScore: 50,
+      questions: [
+        {
+          id: 'q-cs-1',
+          topic: 'Sequence',
+          question: 'Root 10, Left 5, Right 15. What is the Post-order sequence?',
+          options: ['10 -> 5 -> 15', '5 -> 15 -> 10', '5 -> 10 -> 15', '15 -> 10 -> 5'],
+          correctIndex: 1,
+          explanation: 'Post-order processes Left (5), Right (15), then Root (10).',
+        },
+        {
+          id: 'q-cs-2',
+          topic: 'Complexity',
+          question: 'Time complexity of full In-Order traversal on N nodes?',
+          options: ['O(log N)', 'O(N)', 'O(N^2)', 'O(1)'],
+          correctIndex: 1,
+          explanation: 'Every node in the tree is visited exactly once.',
+        },
+      ],
+    },
+    reel: {
+      id: 'reel-cs-201',
+      title: 'Binary Trees in 60 Seconds',
+      durationSeconds: 60,
+      visualStyle: 'mindmap',
+      narrationScript: 'Trees organize data hierarchically. In-order traversal always outputs BSTs in sorted order. If searching level by level, use a queue.',
+      audioWaveform: [0.3, 0.6, 0.8, 0.9, 0.7, 0.8, 0.95, 0.6, 0.4, 0.2],
+      chapters: [
+        { id: 'c-1', title: '01. Hierarchy', timestampSeconds: 0, subtitle: 'Root, branches, leaves.' },
+        { id: 'c-2', title: '02. In-order Magic', timestampSeconds: 20, subtitle: 'Left-Root-Right yields sorted order.' },
+      ],
+    },
+    knowledgeGap: {
+      overallMastery: 85,
+      weakestArea: 'Iterative Post-Order Traversal',
+      strongestArea: 'In-order BST Properties',
+      recommendedStudyOrder: ['Iterative DFS implementations', 'Level width tracking'],
+      topics: [
+        {
+          name: 'BST In-Order Properties',
+          masteryPercentage: 96,
+          status: 'mastered',
+          questionsAttempted: 15,
+          recommendedAction: 'Excellent retention achieved.',
+        },
+      ],
+    },
+  },
+]

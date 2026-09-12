@@ -36,9 +36,277 @@
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-  --font-mono: "IBM Plex Mono", monospace;
-  --font-montserrat: "Montserrat", sans-serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-montserrat: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-mono: var(--font-mono), "IBM Plex Mono", monospace;
+}
+
+.learn-home {
+  --learn-paper: #f7f6f1;
+  background: var(--learn-paper);
+  font-family: var(--font-sans);
+}
+
+.learn-nav {
+  border-bottom: 2px solid #17213f;
+}
+
+.learn-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid #17213f;
+  border-radius: 999px;
+  background: #c9ff4d;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.learn-eyebrow.light {
+  border-color: #c9ff4d;
+  background: transparent;
+  color: #c9ff4d;
+}
+
+.learn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 2px solid #17213f;
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+  box-shadow: 2px 2px 0 #17213f;
+}
+
+.learn-pill.mint, .learn-step.mint, .learn-course.mint { background: #c9ff4d; }
+.learn-pill.sky, .learn-step.sky, .learn-course.sky { background: #9be8ff; }
+.learn-pill.lemon, .learn-step.lemon { background: #fff4bd; }
+.learn-course.pink { background: #ffb7dc; }
+
+.learn-step {
+  position: relative;
+  min-height: 270px;
+  border: 2px solid #17213f;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: 5px 5px 0 #17213f;
+  transition: transform 180ms ease;
+}
+
+.learn-step:hover { transform: translateY(-5px) rotate(-1deg); }
+
+.learn-number {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-family: var(--font-montserrat);
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.learn-course {
+  min-height: 280px;
+  border: 2px solid #fff;
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  color: #17213f;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.learn-course:hover { transform: translateY(-6px); box-shadow: 5px 5px 0 #c9ff4d; }
+
+.learn-study {
+  --study-ink: #17213f;
+  --study-paper: #f7f6f1;
+  background: var(--study-paper);
+  color: var(--study-ink);
+  font-family: var(--font-sans);
+}
+
+.learn-study h1,
+.learn-study h2,
+.learn-study h3,
+.learn-study h4,
+.learn-study .font-montserrat {
+  font-family: var(--font-montserrat);
+  letter-spacing: -0.02em;
+}
+
+.learn-study .font-mono,
+.learn-home .font-mono {
+  font-family: var(--font-sans);
+  letter-spacing: normal;
+}
+
+.learn-study header {
+  background: rgba(247, 246, 241, 0.92);
+  border-bottom: 2px solid var(--study-ink);
+  color: var(--study-ink);
+}
+
+.learn-study header a,
+.learn-study header span {
+  color: var(--study-ink);
+}
+
+.learn-study header .text-primary,
+.learn-study header svg {
+  color: #4938d4;
+}
+
+.learn-study-banner,
+.learn-outline-card {
+  background: #fff;
+  border-color: var(--study-ink);
+  box-shadow: 5px 5px 0 var(--study-ink);
+}
+
+.learn-study-banner h1,
+.learn-study-banner h2,
+.learn-study-banner h3,
+.learn-outline-card h1,
+.learn-outline-card h2,
+.learn-outline-card h3,
+.learn-subtopics h3 {
+  color: var(--study-ink);
+}
+
+.learn-study .text-muted-foreground,
+.learn-subtopics .text-muted-foreground {
+  color: #59627c;
+}
+
+.learn-study-stat {
+  background: #fff4bd;
+  border-color: var(--study-ink);
+}
+
+.learn-study-tabs {
+  background: #fff;
+  border-color: var(--study-ink);
+  box-shadow: 4px 4px 0 var(--study-ink);
+}
+
+.learn-study-tabs [data-state='active'] {
+  background: #c9ff4d;
+  color: var(--study-ink);
+  box-shadow: 2px 2px 0 var(--study-ink);
+}
+
+.learn-study-tabs [data-state='inactive'] {
+  color: var(--study-ink);
+}
+
+.learn-outline-badge {
+  border-color: #17213f;
+  background: #c9ff4d;
+  color: var(--study-ink);
+}
+
+.learn-subtopic-card {
+  border-color: var(--study-ink);
+  border-radius: 1.15rem;
+  background: #fff;
+  box-shadow: 4px 4px 0 var(--study-ink);
+}
+
+.learn-subtopic-card:hover {
+  transform: translateY(-3px) rotate(-0.35deg);
+  box-shadow: 6px 6px 0 var(--study-ink);
+}
+
+.learn-subtopic-card[data-state='ready'],
+.learn-subtopic-card:has(.text-emerald-400) {
+  background: #eaffc2;
+}
+
+.learn-subtopic-number {
+  background: #4938d4;
+  border-color: var(--study-ink);
+  color: #fff;
+}
+
+.learn-objectives {
+  background: #f7f6f1 !important;
+  border-color: #b9bfd0 !important;
+  color: #111827 !important;
+}
+
+.learn-objectives li,
+.learn-objectives span,
+.learn-objectives p {
+  color: #111827 !important;
+}
+
+.learn-objectives span:first-child {
+  color: #4b5563 !important;
+}
+
+.learn-upload-modal {
+  background: #ffffff;
+  border: 1px solid rgba(23, 33, 63, 0.12);
+  color: #17213f;
+  box-shadow: 0 20px 40px -15px rgba(23, 33, 63, 0.12), 0 0 0 1px rgba(23, 33, 63, 0.05);
+}
+
+.learn-upload-header {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(23, 33, 63, 0.08);
+}
+
+.learn-upload-header [data-slot='dialog-title'],
+.learn-upload-header [data-slot='dialog-description'] {
+  color: #17213f;
+}
+
+.learn-upload-body {
+  background: #ffffff;
+}
+
+.learn-upload-body input,
+.learn-upload-body textarea {
+  background: #ffffff;
+  border: 1px solid rgba(23, 33, 63, 0.15);
+  color: #17213f;
+  box-shadow: none;
+}
+
+.learn-upload-body input:focus,
+.learn-upload-body textarea:focus {
+  border-color: #4938d4;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(73, 56, 212, 0.1);
+}
+
+.learn-upload-body label,
+.learn-upload-body .text-muted-foreground {
+  color: #64748b;
+}
+
+.learn-upload-body [role='tablist'] {
+  background: rgba(23, 33, 63, 0.04);
+  border: 1px solid rgba(23, 33, 63, 0.08);
+  box-shadow: none;
+}
+
+.learn-upload-body [role='tab'][data-state='active'] {
+  background: #ffffff;
+  color: #17213f;
+  box-shadow: 0 1px 3px rgba(23, 33, 63, 0.08);
+}
+
+.learn-dropzone {
+  border: 1px dashed rgba(23, 33, 63, 0.2);
+  background: #fafafa;
+  box-shadow: none;
+}
+
+.learn-dropzone:hover {
+  border-color: #4938d4;
+  background: rgba(73, 56, 212, 0.02);
 }
 
 @theme inline {
@@ -46,6 +314,7 @@
   --font-mono: var(--font-mono);
   /* Using CSS variable instead of hardcoded font name */
   --font-montserrat: var(--font-montserrat);
+  --font-sans: var(--font-montserrat);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
